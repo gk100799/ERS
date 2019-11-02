@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <form action="/addUser1/" method="POST">
+    {% csrf_token %}
+  {{ form.as_p }}
+  User ID: <input type="text" name="username"><br>
+  First name: <input type="text" name="firstname"><br>
+  Last name: <input type="text" name="lastname"><br>
+  password: <input type="text" name="password"><br>
+  email: <input type="text" name="email"><br>
+
+  <input type="submit" value="Submit">
+</form>
+</html>
