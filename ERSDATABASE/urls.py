@@ -22,10 +22,14 @@ from django.contrib.auth.views import LoginView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('addUser/', views.index, name='addUser'),
-    path('addUser1/', views.addUser, name='addUser'),
+    path('addUser/', views.addUser, name='addUser'),
+    #path('addUser1/', views.addUser, name='addUser'),
     path('', views.user_login, name='Login'),
     #path('login/', LoginView.as_view(), {'template_name': "login.html"}, name='Login'),
     path('home/', views.homepage, name='Home'),
     path("logout", views.logout_request, name="logout"),
+    path('admin1/', views.adminpage, name='Admin'),
+    path('admin1/create-event/', views.createevent, name='Create Event'),
+    path('admin1/modify-event/', views.modifyevent, name='Modify Event'),
+    path('gaandu/', views.gaandupage, name = 'gaandupage.com'),
 ]

@@ -124,5 +124,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = 'G:/testproject/ERSDATABASE/ERS/static_root'
 
-LOGIN_REDIRECT_URL = 'home'
+STATICFILES_DIRS = ( 
+'G:/testproject/ERSDATABASE/ERS/statics',
+)
+#LOGIN_REDIRECT_URL = 'home'
