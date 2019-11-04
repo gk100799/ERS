@@ -1,0 +1,155 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang = "en"> 
+    <head>
+        <title>Admin</title>
+        
+        <link rel="stylesheet" type="text/css" href="{% static "css/normalize.css" %}">
+        
+        <link rel="stylesheet" type="text/css" href="{% static "css/simple-grid.css" %}"> 
+        
+        <link rel="stylesheet" type="text/css" href="{% static "css/ionicons.min.css" %}">
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        
+        <link rel="stylesheet" type="text/css" href="{% static "css/style-admin.css" %}">
+        
+        <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        
+        <script src="{% static "Js/admin.js" %}"></script>
+    </head>
+     <body>
+            <header>
+                <div class= "user">
+                   Hello, Admin 
+                    <i class="glyphicon glyphicon-user icon-top"></i>
+                    
+                </div>
+                <ul class="main-nav">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Surveys</a></li>
+                </ul>
+                
+            </header>
+         <section class="events_choices">
+            <div class="row" style="max-width: 1100px;margin-left: auto;margin-right: auto">
+                <div class="col col-4-sm">
+                    <button class="mybtn" onclick="openForm()">
+                        <div class="box">
+                        <i class="glyphicon glyphicon-tasks icon-big"></i>
+                        <h4>All Events</h4>
+                        </div>
+                    </button>
+                    
+                </div>
+                
+                <div class="col col-4-sm">
+                    <a href="/admin1/create-event">
+                        <button class="mybtn" id ="myBtn" onclick="openForm() ">
+                        <div class="box">
+                        <i class="glyphicon glyphicon-user icon-big"></i>
+                        <h4>Create Event</h4> 
+                        </div>
+                    </button>
+                    </a>               
+                </div>
+                
+                <div class="col col-4-sm">
+                    <a href="/admin1/modify-event">
+                    <button class="mybtn" id="myBtn2">
+                        <div class="box">
+                        <i class="glyphicon glyphicon-edit icon-big"></i>
+                        <h4>Modify Event</h4>
+                        </div>
+                    </button>  
+                    
+                    </div>
+                    
+                </div>      
+         </section>
+         <section class="register">
+            
+        </section>
+        <script>
+
+      
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+          modal.style.display = "none";
+          <p> helloooooo </p>
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+        </script>
+
+                 <script>
+        // Get the modal
+        var moda = document.getElementById("modify");
+
+        // Get the button that opens the modal
+        var bt = document.getElementById("myBtn2");
+
+        // Get the <span> element that closes the modal
+        var spa = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        bt.onclick = function() {
+          moda.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        spa.onclick = function() {
+          moda.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == moda) {
+            moda.style.display = "none";
+          }
+        }
+        </script>
+         <!--
+                  <section class="stud-creation">
+             <h2 style="text-align: center">Event Creation </h2>
+        
+         </section>
+         <section class="delete_stud">
+             <h2 style="text-align: center">Event Deletion</h2>
+            <section class="register">
+            <div class="box">
+                <form>
+                  Event ID:<br>
+                  <input type="text" name="event_id"><br>    
+              
+                    <input type="submit" value="Delete">
+            </ form>
+            </div>
+        </section>
+
+         </section>   -->
+     </body>
+</html>
+

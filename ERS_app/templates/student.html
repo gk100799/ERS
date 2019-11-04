@@ -1,0 +1,153 @@
+{% load static %}   
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>Rajat's Website</title>
+        
+       <link rel="stylesheet" type="text/css" href="{% static "css/normalize.css" %}">
+        
+        <link rel="stylesheet" type="text/css" href="{% static "css/simple-grid.css" %}"> 
+        
+        <link rel="stylesheet" type="text/css" href="{% static "css/style-stud.css" %}">
+        
+        <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        
+        <link rel="stylesheet/less" type="text/css" href = "{% static "css/normalize.less" %}">
+        
+    </head>
+     <body>
+        <header>
+            <div class="texts">
+                <div class= "admin">
+                   Hello, User 
+                    <i class="glyphicon glyphicon-user icon-top"></i>
+                </div>
+                <ul class="main-nav">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#attendedtable">Feedback</a></li>
+                    <li><a href="#acti">Activities</a></li>
+                </ul>    
+            </div>
+            <br>
+            <section class="events" id="first">
+                <ul class="events-list">
+                    <li>
+                        <figure class="photo">
+                            <img src= "{% static "images/1.jpeg" %}" width="300px">                  
+                            <button class="btn-onimg" onclick="window.location.href = 'https://www.w3docs.com'" target ="_blank" >View More</button>
+                            <figcaption style="color: white;text-align: center">Post 1</figcaption>    
+                        </figure>
+                    </li>
+                    <li>
+                        <figure class="photo">
+                            <img src= "{% static "images/2.jpeg" %}" width="300px">
+                            <button class="btn-onimg">View More</button>
+                            <figcaption style="color: white;text-align: center"  >Post 2</figcaption> 
+                        </figure>
+                    </li>
+                    <li>
+                        <figure class="photo">
+                            <img src= "{% static "images/3.jpeg" %}" width="300px">    
+                            <button class="btn-onimg">View More</button>
+                        <figcaption style="color: white;text-align: center">Post 3</figcaption>     
+                        </figure>
+                    </li>
+                    
+                </ul>    
+            
+            
+            </section>
+            <section class="event-table">
+                <div class = "table">
+                    <table id ="t01">
+                <tr>
+                    <th>List</th>    
+                    <th>Upcounts</th>
+                </tr>    
+            
+                <tr>
+                    <td>LiveWire</td>
+                    <td>54</td>
+                </tr> 
+                <tr>
+                    <td>Gopala</td>
+                    <td>72</td>
+                </tr>
+                <tr>
+                    <td>and soo onn</td>
+                    <td>100</td>
+                </tr> 
+            </table>
+            </div>
+         </section>
+        </header>
+           <div class = "survey" id="attendedtable">
+               <h2 id="surveyhead">&mdash; Survey Section &mdash;</h2>            
+                    <table id ="t02">
+                <tr>
+                    <th>Events Attended</th>    
+                    <th>Survey</th>
+                </tr>    
+            
+                <tr>
+                    <td>LiveWire</td>
+                    <td><a href ="#">Take me</a></td>
+                </tr> 
+                <tr>
+                    <td>Gopal</td>
+                    <td><a href ="#">Take me</a></td>
+                </tr>
+                <tr>
+                    <td>and soo onn</td>
+                    <td><a href ="#">Take me</a></td>
+                </tr> 
+            </table>
+            </div>           
+        <section class ="activities" id="acti">
+            <h2 id="acthead">&mdash; Activities Section &mdash;</h2> 
+            <div class="row" style="width: 1240px;margin-left: auto;margin-right: auto">
+                <div class="col col-4-sm">
+                    <button class="mybtn" onclick="#first">
+                        <div class="box">
+                        <i class="glyphicon glyphicon-tasks icon-big"></i>
+                        <h4>All Events</h4>
+                        </div>
+                    </button>
+                    
+                </div>
+                
+                <div class="col col-4-sm">
+<!--                    <a href="#">-->
+                    <button class="mybtn" onclick="myForm()">
+                        <div class="box">
+                        <i class="glyphicon glyphicon-user icon-big"></i>
+                        <h4>Register</h4> 
+                        </div>
+                    </button>
+                    
+<!--                    </a>-->
+                    
+                </div>
+                
+                <div class="col col-4-sm">
+                    <button class="mybtn" onclick="myForm()">
+                        <div class="box">
+                        <i class="glyphicon glyphicon-edit icon-big"></i>
+                        <h4>Modify Event</h4>
+                        </div>
+                    </button>  
+                </div> 
+                </div>
+         
+         
+         </section>
+         <footer>
+            <a href="#">About us</a>
+         </footer>
+     </body>
+</html>
+
+<!--
+.  She has two older, paternal half-sisters, Marielle and Alana.[11][3] In 2013, Hadid graduated from Malibu High School, where she was captain of the varsity volleyball team as well as a competitive horseback rider.-->
