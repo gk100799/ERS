@@ -70,7 +70,7 @@ def details1(request):
     if logged(request)==True:
         eventid=request.POST['event']
         request.session[12]=eventid
-        return redirect('http://127.0.0.1:8000/home/details')
+        return redirect('https://event-registration-and-survey.herokuapp.com/home/details')
     return redirect('/')
     
 @csrf_exempt
@@ -90,7 +90,7 @@ def register(request):
         user=request.session['11']
         reg=Registers.objects.create(event_id=eventid,user_id=user)
         # reg.save()
-        return redirect('http://127.0.0.1:8000/home')
+        return redirect('https://event-registration-and-survey.herokuapp.com/home')
     return redirect('/')
 
 @csrf_exempt
@@ -98,7 +98,7 @@ def details2(request):
     if logged(request)==True:
         eventid=request.POST['event']
         request.session[12]=eventid
-        return redirect('http://127.0.0.1:8000/home/details3')
+        return redirect('https://event-registration-and-survey.herokuapp.com/home/details3')
     return redirect('/')
 
 
@@ -119,7 +119,7 @@ def unregister(request):
         user=request.session['11']
         cursor=connection.cursor()
         cursor.execute("DELETE FROM registers WHERE user_id=%s AND event_id=%s",(user,eventid))
-        return redirect('http://127.0.0.1:8000/home')
+        return redirect('https://event-registration-and-survey.herokuapp.com/home')
     return redirect('/')
 
 @csrf_exempt
@@ -129,7 +129,7 @@ def survey1(request):
         print(event_id)
         print("sdfsuydhf")
         request.session[13]=event_id
-        return redirect('http://127.0.0.1:8000/home/survey')
+        return redirect('https://event-registration-and-survey.herokuapp.com/home/survey')
     return redirect('/')
 
 @csrf_exempt
@@ -150,7 +150,7 @@ def survey(request):
                 print(option1)
                 cursor=connection.cursor()
                 cursor.execute('INSERT INTO sur_response(user_id,event_id,question_id,response) VALUES (%s,%s,1,%s)',(user,event_id,option1))
-                return redirect('http://127.0.0.1:8000/home/')
+                return redirect('https://event-registration-and-survey.herokuapp.com/home/')
 
             if n==2:
                 option1=request.POST.get('option1')
@@ -159,7 +159,7 @@ def survey(request):
                 cursor=connection.cursor()
                 cursor.execute('INSERT INTO sur_response(user_id,event_id,question_id,response) VALUES (%s,%s,1,%s)',(user,event_id,option1))
                 cursor.execute('INSERT INTO sur_response(user_id,event_id,question_id,response) VALUES (%s,%s,2,%s)',(user,event_id,option2))
-                return redirect('http://127.0.0.1:8000/home/')
+                return redirect('https://event-registration-and-survey.herokuapp.com/home/')
             if n == 3:
                 option1=request.POST.get('option1')
                 print(option1)
@@ -169,7 +169,7 @@ def survey(request):
                 cursor.execute('INSERT INTO sur_response(user_id,event_id,question_id,response) VALUES (%s,%s,1,%s)',(user,event_id,option1))
                 cursor.execute('INSERT INTO sur_response(user_id,event_id,question_id,response) VALUES (%s,%s,2,%s)',(user,event_id,option2))
                 cursor.execute('INSERT INTO sur_response(user_id,event_id,question_id,response) VALUES (%s,%s,3,%s)',(user,event_id,option3))
-                return redirect('http://127.0.0.1:8000/home/')
+                return redirect('https://event-registration-and-survey.herokuapp.com/home/')
             
             if n == 4:
                 option1=request.POST.get('option1')
@@ -182,7 +182,7 @@ def survey(request):
                 cursor.execute('INSERT INTO sur_response(user_id,event_id,question_id,response) VALUES (%s,%s,2,%s)',(user,event_id,option2))
                 cursor.execute('INSERT INTO sur_response(user_id,event_id,question_id,response) VALUES (%s,%s,3,%s)',(user,event_id,option3))
                 cursor.execute('INSERT INTO sur_response(user_id,event_id,question_id,response) VALUES (%s,%s,4,%s)',(user,event_id,option4))
-                return redirect('http://127.0.0.1:8000/home/')
+                return redirect('https://event-registration-and-survey.herokuapp.com/home/')
 
         return render(request, "stud-survey.html/", {"questions":questions})
     return redirect('/')

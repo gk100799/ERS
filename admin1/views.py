@@ -38,7 +38,7 @@ def createevent(request):
         with connection.cursor() as cursor:
             cursor.execute("INSERT INTO events (event_id,event_name,description,organizers,venue,limit_max,fee,time,date) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)", (id1,event_name,description,organizers,venue,limit,fee,time,date))
             messages.success(request, 'Successfully created the Event !')
-        return redirect("http://127.0.0.1:8000/administrator/#events")
+        return redirect("https://event-registration-and-survey.herokuapp.com/administrator/#events")
     #return render(request, "event-create (Final).html")
     return render(request = request,
                 template_name = "event-create (Final).html/")
@@ -52,7 +52,7 @@ def modifyevent1(request):
     context = {}
     event_id = request.POST.get('editevent',None)
     request.session[0]=event_id
-    return redirect('http://127.0.0.1:8000/administrator/edit-event')
+    return redirect('https://event-registration-and-survey.herokuapp.com/administrator/edit-event')
  
 @csrf_exempt
 def modifyevent(request):
@@ -76,7 +76,7 @@ def modifyevent(request):
         with connection.cursor() as cursor:
             cursor.execute("UPDATE events SET event_id=%s,event_name=%s,description=%s,organizers=%s,venue=%s,time=%s,limit_max=%s,fee=%s,date=%s WHERE event_id=%s",(id1,event_name,description,organizers,venue,time,limit,fee,date,id1))  
         messages.success(request, 'Successfully modified the Event !')
-        return redirect("http://127.0.0.1:8000/administrator/#events")
+        return redirect("https://event-registration-and-survey.herokuapp.com/administrator/#events")
     #return render(request, "event-create (Final).html")
     return render(request,"modify.html/", {'event':event})
 
@@ -90,13 +90,13 @@ def deleteevent(request):
     cursor.execute("DELETE FROM sur_response WHERE event_id=%s",  [eventid])
     cursor.execute("DELETE FROM events WHERE event_id=%s",[eventid])
     messages.success(request, 'Succesfully deleted the event',)
-    return redirect("http://127.0.0.1:8000/administrator/#events")
+    return redirect("https://event-registration-and-survey.herokuapp.com/administrator/#events")
 
 @csrf_exempt
 def createsurvey1(request):
     eventid = request.POST.get('editsurvey',None)
     request.session[2]=eventid
-    return redirect('http://127.0.0.1:8000/administrator/edit-survey')
+    return redirect('https://event-registration-and-survey.herokuapp.com/administrator/edit-survey')
 
 @csrf_exempt 
 def createsurvey(request):
@@ -119,7 +119,7 @@ def addsurvey(request):
     cursor=connection.cursor()
     cursor.execute("CALL insques(%s,%s,%s,%s,%s,%s,%s);",(eventid,questionid,question,op1,op2,op3,op4))
     #cursor.execute("INSERT INTO questions(event_id,question_id,question,option1,option2,option3,option4) VALUES (%s,%s,%s,%s,%s,%s,%s)",(eventid,questionid,question,op1,op2,op3,op4))
-    return redirect("http://127.0.0.1:8000/administrator/edit-survey")
+    return redirect("https://event-registration-and-survey.herokuapp.com/administrator/edit-survey")
 
 
 @csrf_exempt
@@ -132,14 +132,14 @@ def deletequestion(request):
         cursor = connection.cursor()
         cursor.execute("DELETE FROM questions WHERE question_id=%s AND event_id=%s", (questionid, eventid))
         messages.success(request, 'Succesfully deleted the question')
-        return redirect("http://127.0.0.1:8000/administrator/edit-survey")
+        return redirect("https://event-registration-and-survey.herokuapp.com/administrator/edit-survey")
 
 
 
 @csrf_exempt
 def registrants1(request):
     request.session[5]=request.POST['registrants']
-    return redirect("http://127.0.0.1:8000/administrator/registrants")
+    return redirect("https://event-registration-and-survey.herokuapp.com/administrator/registrants")
  
 
 
@@ -157,14 +157,14 @@ def registrants(request):
         return render(request,"stud-list.html",{'students':students,'count':count})
     else:
         messages.info(request,"No students registered yet!")
-        return redirect('http://127.0.0.1:8000/administrator/#events')
+        return redirect('https://event-registration-and-survey.herokuapp.com/administrator/#events')
 
 
 @csrf_exempt
 def response1(request):
     request.session[4]=request.POST['responseid']
     print(request.session[4])
-    return redirect("http://127.0.0.1:8000/administrator/response")
+    return redirect("https://event-registration-and-survey.herokuapp.com/administrator/response")
 
 
 def merge(list1, list2): 
@@ -225,7 +225,7 @@ def addstudent(request):
             cursor.execute("INSERT INTO users(username,email,password,first_name,last_name,branch,phone) VALUES (%s,%s,%s,%s,%s,%s,%s)", (username,email,password,firstname,lastname,branch,phone))
         print(connection.queries)
         messages.success(request,'Student added successfully!')
-        return redirect("http://127.0.0.1:8000/administrator/#students")
+        return redirect("https://event-registration-and-survey.herokuapp.com/administrator/#students")
     return render(request = request,
                 template_name = "create-student.html/")
 
@@ -238,7 +238,7 @@ def modifystudent1(request):
     context = {}
     username = request.POST.get('editstudent',None)
     request.session[1]=username
-    return redirect('http://127.0.0.1:8000/administrator/edit-student')
+    return redirect('https://event-registration-and-survey.herokuapp.com/administrator/edit-student')
 
 
 
@@ -263,7 +263,7 @@ def modifystudent(request):
         with connection.cursor() as cursor:
             cursor.execute("UPDATE users SET username=%s,email=%s,password=%s,first_name=%s,last_name=%s,phone=%s,branch=%s WHERE username=%s",(username,email,password,firstname,lastname,phone,branch,username))  
         messages.success(request, 'Successfully modified the Event !')
-        return redirect("http://127.0.0.1:8000/administrator/#students")
+        return redirect("https://event-registration-and-survey.herokuapp.com/administrator/#students")
     #return render(request, "event-create (Final).html")
     return render(request,"modify-student.html/", {'user':user})
 
@@ -276,4 +276,4 @@ def deletestudent(request):
     cursor=connection.cursor()
     cursor.execute("DELETE FROM users WHERE username=%s",[studentid])
     messages.success(request, 'Succesfully deleted student')
-    return redirect("http://127.0.0.1:8000/administrator/#students")
+    return redirect("https://event-registration-and-survey.herokuapp.com/administrator/#students")
