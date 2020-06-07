@@ -1,0 +1,68 @@
+
+{% load static %}
+ 
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>Edit student</title>
+        
+        <link rel="stylesheet" type="text/css" href="{% static "Vendors/Css/normalize.css" %}">
+        
+        <link rel="stylesheet" type="text/css" href="{% static "Vendors/Css/simple-grid.css" %}"> 
+        
+        <link rel="stylesheet" type="text/css" href="{% static "Vendors/Css/ionicons.min.css" %}">
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        
+        <link rel="stylesheet" type="text/css" href="{% static "css/createStud-style.css" %}">
+        
+        <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        
+        <script>
+        
+        </script>
+    </head>
+    
+    <body>
+        <section class="stud-creation">
+             <h2 style="text-align: center">Student details </h2>
+        <section class="register">
+            <div class="box">
+                <form class="create" style="font-size: 18px;font-weight: 500" action="" method="POST">
+                  {% for user in user %}
+                  USN:<br>
+                  <input type="text" name="usn" value="{{ user.username }}"><br>
+                    
+                  First Name:<br>
+                  <input type="text" name="firstname" value="{{ user.first_name }}"><br>    
+              
+                  Last Name:<br>
+                  <input type="text" name="lastname" value="{{ user.last_name }}"><br> 
+                    
+                  Email:<br>
+                  <input type="text" name="email" value="{{ user.email }}"><br>
+                  
+                  Password:<br>
+                  <input type="password" name="password" value="{{ user.password }}"><br>
+                    
+                  Phone:<br>
+                  <input type="text" name="phone" value="{{ user.phone }}"><br>
+                    
+                  Branch:<br>
+                  <input type="text" name="branch" value="{{ user.branch }}"><br>
+                    
+              
+                  <input type="submit" value="Edit">
+            
+                  <input type="button" value="Cancel" class="btncancel">    
+             {% endfor %}
+            </form>
+           
+            </div>
+        </section>
+         </section>
+    </body>
+
+</html>

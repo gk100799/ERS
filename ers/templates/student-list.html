@@ -1,0 +1,58 @@
+{% load static %}   
+{% if messages %}
+        {% for message in messages %}
+         {% if message.tags %}  <script>alert("{{ message }}")</script> {% endif %}
+
+        {% endfor %}
+
+    {% endif %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Flat Table</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'><link rel="stylesheet" href="{% static "css/teststyle.css" %}">
+ 
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<table>
+  <thead>
+    <tr>
+      <th colspan="11"> Events</th>
+    </tr>
+    <tr>
+      <th colspan="2">First name</th>
+      <th colspan="2">Last name </th>
+      <th colspan="2">Email ID</th>
+      <th colspan="2">Username</th>
+      <th colspan="2">Password</th>
+      <th colspan="2">Phone</th>
+      <th>Branch</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for user in user %}
+    <form  method="POST" id="systemForm">
+    <tr>
+      <td colspan="3">{{ user.first_name }} </td>
+      <td colspan="3">{{ user.last_name }} </td>
+      <td colspan="3">{{ user.email }}</td>
+      <td colspan="3">{{ user.username }}</td>
+      <td colspan="3">{{ user.password }}</td>
+      <td colspan="3">{{ user.phone }}</td>
+      <td>{{ user.branch }}</td>
+      <td>
+        <i class="material-icons button edit"><button type="submit" name="editevent" id="1" value="{{ user.username }}" form="systemForm" formaction="/admin1/student-list/edit-student/"> Edit </button> </i>
+      </td>
+      <td>
+        <i class="material-icons button delete"><button type="submit" form="systemForm" formaction="/admin1/student-list/delete-student/"> Delete </button> </i>
+      </td>   
+    </tr>
+    </form>
+    {% endfor %}
+  </tbody>
+</table>
+<!-- partial -->
+</body>
+</html>

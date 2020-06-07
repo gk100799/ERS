@@ -1,0 +1,65 @@
+
+{% load static %}
+ 
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>Create a Student</title>
+        
+        <link rel="stylesheet" type="text/css" href="{% static "Vendors/Css/normalize.css" %}">
+        
+        <link rel="stylesheet" type="text/css" href="{% static "Vendors/Css/simple-grid.css" %}"> 
+        
+        <link rel="stylesheet" type="text/css" href="{% static "Vendors/Css/ionicons.min.css" %}">
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        
+        <link rel="stylesheet" type="text/css" href="{% static "css/createStud-style.css" %}">
+        
+        <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        
+        <script>
+        
+        </script>
+    </head>
+    
+    <body>
+        <section class="stud-creation">
+             <h2 style="text-align: center">Student details </h2>
+        <section class="register">
+            <div class="box">
+                <form class="create" style="font-size: 18px;font-weight: 500" action="" method="POST">
+                  USN:<br>
+                  <input type="text" name="usn"><br>
+                    
+                  First Name:<br>
+                  <input type="text" name="firstname"><br>    
+              
+                  Last Name:<br>
+                  <input type="text" name="lastname"><br> 
+                    
+                  Email:<br>
+                  <input type="text" name="email"><br>
+                  
+                  Password:<br>
+                  <input type="password" name="password"><br>
+                    
+                  Phone:<br>
+                  <input type="text" name="phone"><br>
+                    
+                  Branch:<br>
+                  <input type="text" name="branch"><br>
+                    
+              
+                  <input type="submit" value="Create">
+            
+                  <input type="button" value="Cancel" class="btncancel">    
+            </form>
+            </div>
+        </section>
+         </section>
+    </body>
+
+</html>

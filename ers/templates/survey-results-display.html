@@ -1,0 +1,155 @@
+{% load static %}   
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>Admin</title>
+        
+        <link rel="stylesheet" type="text/css" href="{% static "Vendors/Css/normalize.css" %}">
+        
+        <link rel="stylesheet" type="text/css" href="{% static "Vendors/Css/simple-grid.css" %}"> 
+        
+        <link rel="stylesheet" type="text/css" href="{% static "Vendors/Css/ionicons.min.css" %}">
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        
+        <link rel="stylesheet" type="text/css" href="{% static "css/style-admin(1).css" %}">
+        
+        <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">    
+    
+    
+    <section class="survey-display" id="surveypart">
+            <h1 id="sur-head"><strong>&mdash;Survey Stats&mdash;</strong></h1>
+            {% if events.0  %}
+             <div class = "all-events" id="survey">
+                    <table id ="t03">
+                <caption class="t3head">{{ events.0.0 }}</caption> 
+
+                <tr> 
+                    <th style="background-color: white; color: black">Answer choices</th>    
+                    <th style="background-color: white; color: black">Count</th>
+                    <th style="background-color: white; color: black">Percentage</th>
+                </tr>    
+            
+                <tr>
+                    
+                    {% for option,count,percent in options1 %}
+                    <tr>
+                    <td>{{ option }} </td>
+                    <td>{{ count }}</td>
+                    <td>{{ percent }}%</td>
+                    </tr>
+                    {% endfor %}
+                    
+                </tr> 
+                
+            </table>
+                 
+            </div>
+            {% endif %}
+
+
+
+
+
+            {% if events.1  %}
+             <div class = "all-events" id="survey">
+                    <table id ="t03">
+                <caption class="t3head">{{ events.1.0 }}</caption> 
+
+                <tr> 
+                    <th style="background-color: white; color: black">Answer choices</th>    
+                    <th style="background-color: white; color: black">Count</th>
+                    <th style="background-color: white; color: black">Percentage</th>
+                </tr>    
+            
+                <tr>
+                    
+                    {% for option,count,percent in options2 %}
+                    <tr>
+                    <td>{{ option }} </td>
+                    <td>{{ count }}</td>
+                    <td>{{ percent }}%</td>
+                    </tr>
+                    {% endfor %}
+                    
+                </tr> 
+                
+            </table>
+                 
+            </div>
+            {% endif %}
+
+
+
+
+
+            {% if events.2  %}
+             <div class = "all-events" id="survey">
+                    <table id ="t03">
+                <caption class="t3head">{{ events.2.0 }}</caption> 
+
+                <tr> 
+                    <th style="background-color: white; color: black">Answer choices</th>    
+                    <th style="background-color: white; color: black">Count</th>
+                    <th style="background-color: white; color: black">Percentage</th>
+                </tr>    
+            
+                <tr>
+                    
+                    {% for option,count,percent in options3 %}
+                    <tr>
+                    <td>{{ option }} </td>
+                    <td>{{ count }}</td>
+                    <td>{{ percent }}%</td>
+                    </tr>
+                    {% endfor %}
+                    
+                </tr> 
+                
+            </table>
+                 
+            </div>
+            {% endif %}
+
+
+
+
+
+
+            {% if events.3  %}
+             <div class = "all-events" id="survey">
+                    <table id ="t03">
+                <caption class="t3head">{{ events.3.0 }}</caption> 
+
+                <tr> 
+                    <th style="background-color: white; color: black">Answer choices</th>    
+                    <th style="background-color: white; color: black">Count</th>
+                    <th style="background-color: white; color: black">Percentage</th>
+                </tr>    
+            
+                <tr>
+                    
+                    {% for option,count,percent in options4 %}
+                    <tr>
+                    <td>{{ option }} </td>
+                    <td>{{ count }}</td>
+                    <td>{{ percent }}%</td>
+                    </tr>
+                    {% endfor %}
+                    
+                </tr> 
+                
+            </table>
+                 
+            </div>
+            {% endif %}
+
+
+
+
+
+         </section>
+         </head>
+         </html>

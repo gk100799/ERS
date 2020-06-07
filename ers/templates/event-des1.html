@@ -1,0 +1,127 @@
+
+{% comment %} 
+<!DOCTYPE html>
+<html lang = "en"> 
+    <head>
+        <title>Event_description</title>
+        
+        <link rel="stylesheet" type="text/css" href="{% static "Vendors/Css/normalize.css" %}">
+        
+        <link rel="stylesheet" type="text/css" href="{% static "Vendors/Css/simple-grid.css" %}">
+        
+        <link rel="stylesheet" type="text/css" href="{% static "css/style-description.css" %}">
+        
+        <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <div class="top-part">
+            <img src="Resources/Images/batman-logo-001.jpg" alt="Image Unavaialbe" width="1320px">
+            <div class="bottom-left">Batman Event</div>
+        </div>
+        <h3 >A little bit about the event</h3>
+        <section class="register">
+            {% for event in event %}
+            <div class="box">
+                <b>Event Name:</b>
+                {{event.event_name }}<br><br>
+                <b>Description:</b>
+                {{ event.description }}<br><br>
+                <b>Organisers:</b>
+                {{ event.organizers }}<br><br>
+                <b>Venue:</b>
+                {{ event.venue }}<br><br>
+                <b>Time:</b>
+                {{ event.time }}<br><br>
+                <b>Event Date:</b>
+                {{ event.date }}<br><br>
+                <b>Limit:</b>
+                {{ event.limit_max }}<br><br>
+                <b>Event Fee:</b>
+                {{ event.fee }}<br><br>
+                <input type="submit" value="Register">
+<!--
+                <form>
+                  USN:<br>
+                  <input type="text" name="usn"><br>    
+              
+                    First Name:<br>
+                  <input type="text" name="firstname"><br>
+                    
+                  Last name:<br>
+                  <input type="text" name="lastname"><br>
+                  
+                    E-Mail:<br>
+                  <input type = "text" name="mail"><br>
+                                
+                    Gender:<br>
+                  <input type="radio" name="gender" value="male" checked> Male<br>
+                    <input type="radio" name="gender" value="female"> Female<br>
+                  <input type="radio" name="gender" value="other"> Other<br>
+                    <input type="submit" value="Submit">
+            </ form>
+-->
+            </div>
+            {% endfor %}
+        </section>
+        <footer>
+            <a href="#" style="color: white">Back to Home</a>
+        </footer>
+    </body>
+
+
+ {% endcomment %}
+
+
+
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang = "en"> 
+    <head>
+        <title>Event_description</title>
+        
+        <link rel="stylesheet" type="text/css" href="{% static "Vendors/Css/normalize.css" %}">
+        
+        <link rel="stylesheet" type="text/css" href="{% static "Vendors/Css/simple-grid.css" %}">
+        
+        <link rel="stylesheet" type="text/css" href="{% static "css/style-description.css" %}">
+        
+        <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        
+        <h3 >A little bit about the event</h3>
+        <section class="register">
+            
+            
+            <div class="box">
+                {% for event in event %}
+            <form action="" method="POST">
+                <b>Event Name:</b>
+                {{event.event_name }}<br><br>
+                <b>Description:</b>
+                {{ event.description }}<br><br>
+                <b>Organisers:</b>
+                {{ event.organizers }}<br><br>
+                <b>Venue:</b>
+                {{ event.venue }}<br><br>
+                <b>Time:</b>
+                {{ event.time }}<br><br>
+                <b>Event Date:</b>
+                {{ event.date }}<br><br>
+                <b>Limit:</b>
+                {{ event.limit_max }}<br><br>
+                <b>Fee:</b>
+                {{ event.fee }}<br><br>
+                <button formaction="/home/unregister/" type="submit">Unregister</button>
+            </form>
+            {% endfor %}
+            </div>
+            
+          
+        </section>
+        <footer>
+            <a href="#" style="color: white">Back to Home</a>
+        </footer>
+    </body>
