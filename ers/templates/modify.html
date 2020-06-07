@@ -1,0 +1,71 @@
+{% load static %}   
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>Admin</title> 
+        
+        <link rel="stylesheet" type="text/css" href="{% static "css/normalize.css" %}">
+        
+        <link rel="stylesheet" type="text/css" href="{% static "css/simple-grid.css" %}"> 
+        
+        <link rel="stylesheet" type="text/css" href="{% static "css/ionicons.min.css" %}">
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        
+        <link rel="stylesheet" type="text/css" href="{% static "css/create-style.css" %}">
+        
+        <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        
+        <script>
+        
+        </script>
+    </head>
+    
+    <body>
+        <section class="stud-creation">
+             <h2 style="text-align: center">Event Modification</h2>
+        <section class="register">
+            <div class="box">
+                <form class="create" style="font-size: 18px;font-weight: 500" action="" method="POST">
+                  {% for event in event %}
+                  Event ID:<br>
+                  <input type="text" name="event_id" value="{{ event.event_id }}"><br>
+                    
+                  Name of the Event:<br>
+                  <input type="text" name="event_name" value="{{ event.event_name }}"><br>    
+              
+                   Description:<br>
+                  <input type="text" name="description" value="{{ event.description }}"><br>
+
+                   Limit:<br>
+                  <input type="number" name="limit" value="{{ event.limit_max }}"><br>
+
+                  Venue:<br>
+                  <input type="text" name="venue" value="{{ event.venue }}"><br>
+                  
+                  Date:<br>
+                  <input type="text" name="date" value="{{ event.date }}"><br>
+                    
+                  Timings:<br>
+                  <input type="text" name="time" value="{{ event.time }}"><br>
+                    
+                  Fee:<br>
+                  <input type="number" name="fee" value="{{ event.fee }}"><br>
+
+                  Organizers:<br>
+                  <input type="text" name="organizers" value="{{ event.organizers }}"><br>
+                            
+                  <input type="submit" value="Modify">
+                  
+            
+                {% endfor %}   
+            </form>
+            </div>
+        </section>
+         </section>
+    </body>
+    
+
+</html>

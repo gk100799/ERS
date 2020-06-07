@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: black;
+}                  
+
+html {
+    background-color: #fff;
+    color: #ffffff;
+    font-family: 'Lato','Arial',sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+}
+
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url(Images/main-bg.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    max-height: 650px;
+}
+
+.bgimage {
+    position: absolute;
+    width: 1300px;
+    text-align: center;
+    font-size: 25px;
+    
+}
+h1 {
+    margin-top: 10px; 
+}
+.form {
+    max-width: 1240px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    
+}
+
+.box {
+    opacity: 0.9;
+    background-color: white;
+    position: relative;
+    border: 1px solid #363030;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px 60px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 20px 10px #a0a0a0;
+}
+
+input {
+    font-weight: 300px;
+    margin: 10px;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+input[type = text] ,
+input[type = password]{
+    border: none;
+    border-bottom: 1px solid grey;
+    width: 50%;
+    padding:8px;
+}
+
+input[type = submit]{
+    background-color: #000000;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin: 8px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    position: absolute;
+    left: 150px;
+    bottom: 10px;
+}
+input[type = reset]{
+    background-color: #000000;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin: 8px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    position: absolute;
+    right: 150px;
+    bottom: 10px;
+}
+.register {
+    margin:40px;
+}
+
